@@ -1,4 +1,5 @@
 const list = document.querySelector('.list');
+const form = document.querySelector('form');
 const input = document.querySelector('input');
 const addBtn = document.querySelector('.add');
 
@@ -30,12 +31,7 @@ list.addEventListener('click', (e) => {
   }
 });
 
-addBtn.addEventListener('click', addItemAndResetInput);
-
-input.addEventListener('keydown', (event) => {
-  if (event.isComposing)
-    return;
-  if (event.key == 'Enter') {
-    addItemAndResetInput();
-  }
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // 페이지 자동 새로고침 방지
+  addItemAndResetInput();
 });
