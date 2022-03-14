@@ -22,6 +22,7 @@ function addItemAndResetInput() {
     return;
   addItem(input.value);
   input.value = '';
+  input.focus();
 }
 
 list.addEventListener('click', (e) => {
