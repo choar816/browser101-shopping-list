@@ -32,8 +32,10 @@ list.addEventListener('click', (e) => {
 
 addBtn.addEventListener('click', addItemAndResetInput);
 
-input.addEventListener('keypress', (key) => {
-  if (key.key == 'Enter') {
+input.addEventListener('keydown', (event) => {
+  if (event.isComposing)
+    return;
+  if (event.key == 'Enter') {
     addItemAndResetInput();
   }
 });
